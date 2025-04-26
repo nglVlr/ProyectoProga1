@@ -49,6 +49,23 @@ public class Ticket implements Serializable {
     }
 
     // Métodos adicionales
+    public void guardarEnBD() {
+        try {
+            new TicketDAO().crearTicket(this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Maneja el error adecuadamente
+        }
+    }
+
+    public static List<Ticket> cargarTodos() {
+        try {
+            return new TicketDAO().obtenerTodos();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
 }
 
 
