@@ -20,6 +20,12 @@ public class EstadoTicket implements Serializable {
     public String getNombre() {
         return nombre;
     }
+
+    public StringProperty nombreProperty() {
+        return new SimpleStringProperty(nombre);
+    }
 }
+
+
 
 

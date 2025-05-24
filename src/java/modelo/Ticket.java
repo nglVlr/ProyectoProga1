@@ -66,6 +66,19 @@ public class Ticket implements Serializable {
             return new ArrayList<>();
         }
     }
+
+    public StringProperty tituloProperty() {
+        return new SimpleStringProperty(titulo);
+    }
+
+    public ObjectProperty<EstadoTicket> estadoProperty() {
+        return new SimpleObjectProperty<>(estado);
+    }
+
+    public ObjectProperty<Tecnico> asignadoProperty() {
+        return new SimpleObjectProperty<>(asignado);
+    }
 }
+
 
 
